@@ -53,13 +53,5 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['account/login'] = 'Account/Login';
-$route['message'] = 'Home/Message';
-$route['admin'] = 'admin/User/index';
-$route['admin/user/(:num)'] = 'admin/User/index/$1';
-$route['admin/event'] = 'admin/event/index';
-$route['admin/event/(:any)'] = 'admin/event/$1';
-
-//  Order-Controller
-$route['admin/order/(:num)'] = 'admin/Order/index/$1';
-$route['admin/order/detail/(:any)/(:any)'] = 'Admin/Order/detail/$1/$2';
+//Admin
+$route['admin'] = 'admin/Home';
