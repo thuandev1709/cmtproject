@@ -1,137 +1,242 @@
-<aside class="sidebar">
-    <div class="scrollbar-inner">
-
-        <div class="user">
-            <div class="user__info" data-toggle="dropdown">
-                <img class="user__img" src="<?php echo base_url('assets/admin/image/profile-pics/8.jpg') ?>" alt="">
-                <div>
-                    <div class="user__name">Malinda Hollaway</div>
-                    <div class="user__email">malinda-h@gmail.com</div>
+<!-- #Top Bar -->
+<section>
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="image">
+                <img src="<?php echo base_url(); ?>assets/admin/images/user.png" width="48" height="48" alt="User" />
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$cmt01_firstname.' '.$cmt01_lastname?></div>
+                <div class="email"><?=$cmt01_email?></div>
+                <div class="btn-group user-helper-dropdown">
+                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                    <ul class="dropdown-menu pull-right">
+                        <!-- <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                        <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                        <li role="separator" class="divider"></li> -->
+                        <li><a href="<?php echo base_url('admin/account/signout'); ?>"><i class="material-icons">input</i>Sign Out</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="">View Profile</a>
-                <a class="dropdown-item" href="">Settings</a>
-                <a class="dropdown-item" href="">Logout</a>
+        </div>
+        <!-- #User Info -->
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list">
+                <li class="header">MENU</li>
+                <li class="<?php if($page_name =='home') echo 'active';?>">
+                    <a href="<?=base_url('admin')?>">
+                        <i class="material-icons">home</i>
+                        <span>Trang Chủ</span>
+                    </a>
+                </li>
+                <li class="<?php if($page_name =='category' || $page_name =='category_add' || $page_name =='category_edit') echo 'active';?>">
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">assignment</i>
+                        <span>Loại Sản Phẩm</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li class="<?php if($page_name =='category') echo 'active';?>">
+                            <a href="<?=base_url('admin/category')?>" class="waves-effect waves-block">Danh Sách Loại</a>
+                        </li>
+                        <li class="<?php if($page_name =='category_add' || $page_name =='category_edit') echo 'active';?>">
+                            <a href="<?=base_url('admin/category/add')?>" class="waves-effect waves-block">Thêm/Chỉnh Sửa Loại</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="<?php if($page_name =='product' || $page_name =='product_add' || $page_name =='product_edit') echo 'active';?>">
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">assignment</i>
+                        <span>Sản Phẩm</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li class="<?php if($page_name =='product') echo 'active';?>">
+                            <a href="<?=base_url('admin/product')?>" class="waves-effect waves-block">Danh Sách Sản Phẩm</a>
+                        </li>
+                        <li class="<?php if($page_name =='product_add' || $page_name =='product_edit') echo 'active';?>">
+                            <a href="<?=base_url('admin/product/add')?>" class="waves-effect waves-block">Thêm/Chỉnh Sửa Sản Phẩm</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="<?php if($page_name =='news' || $page_name =='news_add' || $page_name =='news_edit') echo 'active';?>">
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                        <i class="material-icons">comment</i>
+                        <span>Tin Tức</span>
+                    </a>
+                    <ul class="ml-menu" style="display: none;">
+                        <li class="<?php if($page_name =='news') echo 'active';?>">
+                            <a href="<?=base_url('admin/news')?>" class="waves-effect waves-block">Danh Sách Tin Tức</a>
+                        </li>
+                        <li class="<?php if($page_name =='news_add' || $page_name =='news_edit') echo 'active';?>">
+                            <a href="<?=base_url('admin/news/add')?>" class="waves-effect waves-block">Thêm/Chỉnh Sửa Tin Tức</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+        <!-- Footer -->
+        <div class="legal">
+            <div class="copyright">
+                &copy; 2018-2019 <a href="#">Store Cosmetic</a>
+            </div>
+            <div class="version">
+                <b>Version: </b> 1.0.0 <br>
+                <p>Contact: lethanhthuan.dev@gmail.com</p>
             </div>
         </div>
-
-        <ul class="navigation">
-            <li class="navigation__active"><a href="<?php echo base_url(); ?>admin"><i class="zmdi zmdi-home"></i> Trang Chủ</a></li>
-
-            <li class="@@typeactive"><a href="<?php echo base_url(); ?>admin/category"><i class="zmdi zmdi-collection-text"></i> Loại Sản Phẩm</a></li>
-
-            <li class="navigation__sub @@variantsactive">
-                <a href=""><i class="zmdi zmdi-view-week"></i> Variants</a>
-
-                <ul>
-                    <li class="@@sidebaractive"><a href="hidden-sidebar.html">Hidden Sidebar</a></li>
-                    <li class="@@boxedactive"><a href="boxed-layout.html">Boxed Layout</a></li>
-                    <li class="@@hiddensidebarboxedactive"><a href="hidden-sidebar-boxed-layout.html">Boxed Layout with Hidden Sidebar</a></li>
-                </ul>
-            </li>
-
-            <li class="@@typeactive"><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
-
-            <li class="@@widgetactive"><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Widgets</a></li>
-
-            <li class="navigation__sub @@tableactive">
-                <a href=""><i class="zmdi zmdi-view-list"></i> Tables</a>
-
-                <ul>
-                    <li class="@@normaltableactive"><a href="html-table.html">HTML Table</a></li>
-                    <li class="@@datatableactive"><a href="data-table.html">Data Table</a></li>
-                </ul>
-            </li>
-
-            <li class="navigation__sub @@formactive">
-                <a href=""><i class="zmdi zmdi-collection-text"></i> Forms</a>
-
-                <ul>
-                    <li class="@@formelementactive"><a href="form-elements.html">Basic Form Elements</a></li>
-                    <li class="@@formcomponentactive"><a href="form-components.html">Form Components</a></li>
-                    <li class="@@formvalidationactive"><a href="form-validation.html">Form Validation</a></li>
-                </ul>
-            </li>
-
-            <li class="navigation__sub @@uiactive">
-                <a href=""><i class="zmdi zmdi-swap-alt"></i> User Interface</a>
-
-                <ul>
-                    <li class="@@colorsactive"><a href="colors.html">Colors</a></li>
-                    <li class="@@cssanimationsactive"><a href="css-animations.html">CSS Animations</a></li>
-                    <li class="@@buttonsactive"><a href="buttons.html">Buttons</a></li>
-                    <li class="@@iconsactive"><a href="icons.html">Icons</a></li>
-                    <li class="@@listviewactive"><a href="listview.html">Listview</a></li>
-                    <li class="@@toolbarsactive"><a href="toolbars.html">Toolbars</a></li>
-                    <li class="@@cardsactive"><a href="cards.html">Cards</a></li>
-                    <li class="@@alertactive"><a href="alerts.html">Alerts</a></li>
-                    <li class="@@badgesactive"><a href="badges.html">Badges</a></li>
-                    <li class="@@breadcrumbsactive"><a href="breadcrumbs.html">Bredcrumbs</a></li>
-                    <li class="@@jumbotronactive"><a href="jumbotron.html">Jumbotron</a></li>
-                    <li class="@@navsactive"><a href="navs.html">Navs</a></li>
-                    <li class="@@paginationactive"><a href="pagination.html">Pagination</a></li>
-                    <li class="@@progressactive"><a href="progress.html">Progress</a></li>
-                </ul>
-            </li>
-
-            <li class="navigation__sub @@componentsactive">
-                <a href=""><i class="zmdi zmdi-group-work"></i> Javascript Components</a>
-
-                <ul class="navigation__sub">
-                    <li class="@@carouselactive"><a href="carousel.html">Carousel</a></li>
-                    <li class="@@collapseactive"><a href="collapse.html">Collapse</a></li>
-                    <li class="@@dropdownsactive"><a href="dropdowns.html">Dropdowns</a></li>
-                    <li class="@@modalsactive"><a href="modals.html">Modals</a></li>
-                    <li class="@@popoveractive"><a href="popover.html">Popover</a></li>
-                    <li class="@@tabsactive"><a href="tabs.html">Tabs</a></li>
-                    <li class="@@tooltipsactive"><a href="tooltips.html">Tooltips</a></li>
-                    <li class="@@notificationsactive"><a href="notifications-alerts.html">Notifications & Alerts</a></li>
-                    <li class="@@treeactive"><a href="treeview.html">Tree View</a></li>
-                </ul>
-            </li>
-
-            <li class="navigation__sub @@chartsactive">
-                <a href=""><i class="zmdi zmdi-trending-up"></i> Charts</a>
-
-                <ul>
-                    <li class="@@flotchartsactive"><a href="flot-charts.html">Flot</a></li>
-                    <li class="@@otherchartsactive"><a href="other-charts.html">Other Charts</a></li>
-                </ul>
-            </li>
-
-            <li class="@@calendaractive"><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
-
-            <li class="@@photogalleryactive"><a href="photo-gallery.html"><i class="zmdi zmdi-image"></i> Photo Gallery</a></li>
-
-            <li class="navigation__sub @@samplepagesactive">
-                <a href=""><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
-
-                <ul>
-                    <li class="@@profileactive"><a href="profile-about.html">Profile</a></li>
-                    <li class="@@messagesactive"><a href="messages.html">Messages</a></li>
-                    <li class="@@contactsactive"><a href="contacts.html">Contacts</a></li>
-                    <li class="@@newcontactsactive"><a href="new-contact.html">New Contact</a></li>
-                    <li class="@@groupsactive"><a href="groups.html">Groups</a></li>
-                    <li class="@@pricingtablesactive"><a href="pricing-tables.html">Pricing Tables</a></li>
-                    <li class="@@invoiceactive"><a href="invoice.html">Invoice</a></li>
-                    <li class="@@todoactive"><a href="todo-lists.html">Todo Lists</a></li>
-                    <li class="@@notesactive"><a href="notes.html">Notes</a></li>
-                    <li class="@@searchresultsactive"><a href="search-results.html">Search Results</a></li>
-                    <li class="@@issuesactive"><a href="issue-tracker.html">Issues Tracker</a></li>
-                    <li class="@@faqactive"><a href="faq.html">FAQ</a></li>
-                    <li class="@@teamactive"><a href="team.html">Team</a></li>
-                    <li class="@@blogactive"><a href="blog.html">Blog</a></li>
-                    <li class="@@blogdetailactive"><a href="blog-detail.html">Blog Detail</a></li>
-                    <li class="@@qaactive"><a href="questions-answers.html">Questions & Answers</a></li>
-                    <li class="@@qadetailactive"><a href="questions-answers-details.html">Questions & Answers Details</a></li>
-                    <li class="@@loginactive"><a href="login.html">Login & SignUp</a></li>
-                    <li class="@@lockscreenactive"><a href="lockscreen.html">Lockscreen</a></li>
-                    <li class="@@lockscreenactive"><a href="404.html">404</a></li>
-                    <li class="@@emptyactive"><a href="empty.html">Empty Page</a></li>
-                </ul>
-            </li>
+        <!-- #Footer -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+    <!-- Right Sidebar -->
+    <aside id="rightsidebar" class="right-sidebar">
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+            <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+            <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
         </ul>
-    </div>
-</aside>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                <ul class="demo-choose-skin">
+                    <li data-theme="red">
+                        <div class="red"></div>
+                        <span>Red</span>
+                    </li>
+                    <li data-theme="pink" class="active">
+                        <div class="pink"></div>
+                        <span>Pink</span>
+                    </li>
+                    <li data-theme="purple">
+                        <div class="purple"></div>
+                        <span>Purple</span>
+                    </li>
+                    <li data-theme="deep-purple">
+                        <div class="deep-purple"></div>
+                        <span>Deep Purple</span>
+                    </li>
+                    <li data-theme="indigo">
+                        <div class="indigo"></div>
+                        <span>Indigo</span>
+                    </li>
+                    <li data-theme="blue">
+                        <div class="blue"></div>
+                        <span>Blue</span>
+                    </li>
+                    <li data-theme="light-blue">
+                        <div class="light-blue"></div>
+                        <span>Light Blue</span>
+                    </li>
+                    <li data-theme="cyan">
+                        <div class="cyan"></div>
+                        <span>Cyan</span>
+                    </li>
+                    <li data-theme="teal">
+                        <div class="teal"></div>
+                        <span>Teal</span>
+                    </li>
+                    <li data-theme="green">
+                        <div class="green"></div>
+                        <span>Green</span>
+                    </li>
+                    <li data-theme="light-green">
+                        <div class="light-green"></div>
+                        <span>Light Green</span>
+                    </li>
+                    <li data-theme="lime">
+                        <div class="lime"></div>
+                        <span>Lime</span>
+                    </li>
+                    <li data-theme="yellow">
+                        <div class="yellow"></div>
+                        <span>Yellow</span>
+                    </li>
+                    <li data-theme="amber">
+                        <div class="amber"></div>
+                        <span>Amber</span>
+                    </li>
+                    <li data-theme="orange">
+                        <div class="orange"></div>
+                        <span>Orange</span>
+                    </li>
+                    <li data-theme="deep-orange">
+                        <div class="deep-orange"></div>
+                        <span>Deep Orange</span>
+                    </li>
+                    <li data-theme="brown">
+                        <div class="brown"></div>
+                        <span>Brown</span>
+                    </li>
+                    <li data-theme="grey">
+                        <div class="grey"></div>
+                        <span>Grey</span>
+                    </li>
+                    <li data-theme="blue-grey">
+                        <div class="blue-grey"></div>
+                        <span>Blue Grey</span>
+                    </li>
+                    <li data-theme="black">
+                        <div class="black"></div>
+                        <span>Black</span>
+                    </li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="settings">
+                <div class="demo-settings">
+                    <p>GENERAL SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Report Panel Usage</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Email Redirect</span>
+                            <div class="switch">
+                                <label><input type="checkbox"><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>SYSTEM SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Notifications</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Auto Updates</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>ACCOUNT SETTINGS</p>
+                    <ul class="setting-list">
+                        <li>
+                            <span>Offline</span>
+                            <div class="switch">
+                                <label><input type="checkbox"><span class="lever"></span></label>
+                            </div>
+                        </li>
+                        <li>
+                            <span>Location Permission</span>
+                            <div class="switch">
+                                <label><input type="checkbox" checked><span class="lever"></span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- #END# Right Sidebar -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">

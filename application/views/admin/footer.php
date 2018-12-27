@@ -1,33 +1,50 @@
-        </main>
+        </div>
+    </section>
 
-        <!-- Javascript -->
-        <!-- Vendors -->
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/popper.js/dist/umd/popper.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery/jquery.min.js"></script>
 
-        <script src="<?php echo base_url(); ?>vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/flot/jquery.flot.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/flot/jquery.flot.resize.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/peity/jquery.peity.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/moment/min/moment.min.js"></script>
-        <script src="<?php echo base_url(); ?>vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/bootstrap/js/bootstrap.js"></script>
 
-        <!-- Charts and maps-->
-        <script src="<?php echo base_url(); ?>assets/admin/js/flot-charts/curved-line.js"></script>
-        <script src="<?php echo base_url(); ?>assets/admin/js/flot-charts/line.js"></script>
-        <script src="<?php echo base_url(); ?>assets/admin/js/flot-charts/dynamic.js"></script>
-        <script src="<?php echo base_url(); ?>assets/admin/js/flot-charts/chart-tooltips.js"></script>
-        <script src="<?php echo base_url(); ?>assets/admin/js/other-charts.js"></script>
-        <script src="<?php echo base_url(); ?>assets/admin/js/jqvmap.js"></script>
+    <!-- Select Plugin Js -->
+    <!-- <script src="<?php echo base_url(); ?>assets/admin/plugins/bootstrap-select/js/bootstrap-select.js"></script> -->
 
-        <!-- App functions and actions -->
-        <script src="<?php echo base_url(); ?>assets/admin/js/app.min.js"></script>
-    </body>
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/node-waves/waves.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/morrisjs/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/js/admin.js"></script>
+    <script src="<?php echo base_url(); ?>assets/admin/js/pages/index.js"></script>
+
+    <!-- Demo Js -->
+    <script src="<?php echo base_url(); ?>assets/admin/js/demo.js"></script>
+</body>
+
 </html>

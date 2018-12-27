@@ -7,20 +7,12 @@ class Home extends MY_Controller {
 		parent::__construct();
 	}
 
-	public function header()
-	{
-		$this->load->view('admin/header.php');
-	}
-
-    public function footer()
-    {
-        $this->load->view('admin/footer.php');
-    }
-
 	public function index()
 	{
 		$this->header();
-		$this->load->view('admin/home.php');
+		$this->_sidebar['page_name'] = 'home';
+		$this->load->view('admin/sidebar.php', $this->_sidebar);
+		$this->load->view('admin/home');
         $this->footer();
 	}
 }

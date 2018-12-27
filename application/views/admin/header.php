@@ -1,348 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Admin Cosmetic</title>
+<html>
 
-        <!-- Vendor styles -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bower_components/animate.css/animate.min.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bower_components/jquery.scrollbar/jquery.scrollbar.css">
-        <link rel="stylesheet" href="<?php echo base_url(); ?>vendors/bower_components/fullcalendar/dist/fullcalendar.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Welcome To Admin Cosmetics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- App styles -->
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/app.min.css">
-    </head>
+    <!-- Ckeditor -->
+    <script src="https://cdn.ckeditor.com/4.11.1/standard-all/ckeditor.js"></script>
+    
+    <!-- Favicon-->
+    <link rel="icon" href="<?php echo base_url(); ?>favicon.ico" type="image/x-icon">
 
-    <body data-sa-theme="1">
-        <main class="main">
-            <header class="header">
-                <div class="navigation-trigger hidden-xl-up" data-sa-action="aside-open" data-sa-target=".sidebar">
-                    <i class="zmdi zmdi-menu"></i>
-                </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-                <div class="logo hidden-sm-down">
-                    <h1><a href="index.html">Admin Cosmetic</a></h1>
-                </div>
+    <!-- Bootstrap Core Css -->
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
-                <form class="search">
-                    <div class="search__inner">
-                        <input type="text" class="search__text" placeholder="Search for people, files, documents...">
-                        <i class="zmdi zmdi-search search__helper" data-sa-action="search-close"></i>
+    <!-- Waves Effect Css -->
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Sweetalert Css -->
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="<?php echo base_url(); ?>assets/admin/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="<?php echo base_url(); ?>assets/admin/css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-pink">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
                     </div>
-                </form>
-
-                <ul class="top-nav">
-                    <li class="hidden-xl-up"><a href="" data-sa-action="search-open"><i class="zmdi zmdi-search"></i></a></li>
-
-                    <li class="dropdown">
-                        <a href="" data-toggle="dropdown" class="top-nav__notify"><i class="zmdi zmdi-email"></i></a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
-                            <div class="dropdown-header">
-                                Messages
-
-                                <div class="actions">
-                                    <a href="messages.html" class="actions__item zmdi zmdi-plus"></a>
-                                </div>
-                            </div>
-
-                            <div class="listview listview--hover">
-                                <a href="" class="listview__item">
-                                    <img src="<?php echo base_url('assets/admin/image/profile-pics') ?>/1.jpg" class="listview__img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">
-                                            David Belle <small>12:01 PM</small>
-                                        </div>
-                                        <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <img src="<?php echo base_url('assets/admin/image/profile-pics') ?>/2.jpg" class="listview__img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">
-                                            Jonathan Morris
-                                            <small>02:45 PM</small>
-                                        </div>
-                                        <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <img src="<?php echo base_url('assets/admin/image/profile-pics') ?>/3.jpg" class="listview__img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">
-                                            Fredric Mitchell Jr.
-                                            <small>08:21 PM</small>
-                                        </div>
-                                        <p>Phasellus a ante et est ornare accumsan at vel magnauis blandit turpis at augue ultricies</p>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <img src="<?php echo base_url('assets/admin/image/profile-pics') ?>/4.jpg" class="listview__img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">
-                                            Glenn Jecobs
-                                            <small>08:43 PM</small>
-                                        </div>
-                                        <p>Ut vitae lacus sem ellentesque maximus, nunc sit amet varius dignissim, dui est consectetur neque</p>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <img src="<?php echo base_url('assets/admin/image/profile-pics') ?>/5.jpg" class="listview__img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">
-                                            Bill Phillips
-                                            <small>11:32 PM</small>
-                                        </div>
-                                        <p>Proin laoreet commodo eros id faucibus. Donec ligula quam, imperdiet vel ante placerat</p>
-                                    </div>
-                                </a>
-
-                                <a href="" class="view-more">View all messages</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="dropdown top-nav__notifications">
-                        <a href="" data-toggle="dropdown" class="top-nav__notify">
-                            <i class="zmdi zmdi-notifications"></i>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">ADMINBSB - STORE COSMETIC</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <!-- <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">7</span>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
-                            <div class="dropdown-header">
-                                Notifications
-
-                                <div class="actions">
-                                    <a href="" class="actions__item zmdi zmdi-check-all" data-sa-action="notifications-clear"></a>
-                                </div>
-                            </div>
-
-                            <div class="listview listview--hover">
-                                <div class="listview__scroll scrollbar-inner">
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/1.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">David Belle</div>
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/2.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Jonathan Morris</div>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/3.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Fredric Mitchell Jr.</div>
-                                            <p>Phasellus a ante et est ornare accumsan at vel magnauis blandit turpis at augue ultricies</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/4.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Glenn Jecobs</div>
-                                            <p>Ut vitae lacus sem ellentesque maximus, nunc sit amet varius dignissim, dui est consectetur neque</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/5.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Bill Phillips</div>
-                                            <p>Proin laoreet commodo eros id faucibus. Donec ligula quam, imperdiet vel ante placerat</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/1.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">David Belle</div>
-                                            <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/2.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Jonathan Morris</div>
-                                            <p>Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</p>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="listview__item">
-                                        <img src="<?php echo base_url('assets/admin/image/profile-pics/3.jpg') ?>" class="listview__img" alt="">
-
-                                        <div class="listview__content">
-                                            <div class="listview__heading">Fredric Mitchell Jr.</div>
-                                            <p>Phasellus a ante et est ornare accumsan at vel magnauis blandit turpis at augue ultricies</p>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="p-1"></div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="dropdown hidden-xs-down">
-                        <a href="" data-toggle="dropdown"><i class="zmdi zmdi-check-circle"></i></a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
-                            <div class="dropdown-header">Tasks</div>
-
-                            <div class="listview listview--hover">
-                                <a href="" class="listview__item">
-                                    <div class="listview__content">
-                                        <div class="listview__heading">HTML5 Validation Report</div>
-
-                                        <div class="progress mt-1">
-                                            <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <div class="listview__content">
-                                        <div class="listview__heading">Google Chrome Extension</div>
-
-                                        <div class="progress mt-1">
-                                            <div class="progress-bar bg-warning" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <div class="listview__content">
-                                        <div class="listview__heading">Social Intranet Projects</div>
-
-                                        <div class="progress mt-1">
-                                            <div class="progress-bar bg-success" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <div class="listview__content">
-                                        <div class="listview__heading">Bootstrap Admin Template</div>
-
-                                        <div class="progress mt-1">
-                                            <div class="progress-bar bg-info" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="listview__item">
-                                    <div class="listview__content">
-                                        <div class="listview__heading">Youtube Client App</div>
-
-                                        <div class="progress mt-1">
-                                            <div class="progress-bar bg-danger" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <a href="" class="view-more">View all Tasks</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="dropdown hidden-xs-down">
-                        <a href="" data-toggle="dropdown"><i class="zmdi zmdi-apps"></i></a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
-                            <div class="row app-shortcuts">
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-calendar"></i>
-                                    <small class="">Calendar</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-file-text"></i>
-                                    <small class="">Files</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-email"></i>
-                                    <small class="">Email</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-trending-up"></i>
-                                    <small class="">Reports</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-view-headline"></i>
-                                    <small class="">News</small>
-                                </a>
-                                <a class="col-4 app-shortcuts__item" href="">
-                                    <i class="zmdi zmdi-image"></i>
-                                    <small class="">Gallery</small>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="dropdown hidden-xs-down">
-                        <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="" class="dropdown-item" data-sa-action="fullscreen">Fullscreen</a>
-                            <a href="" class="dropdown-item">Clear Local Storage</a>
-                            <a href="" class="dropdown-item">Settings</a>
-                        </div>
-                    </li>
-
-                    <li class="hidden-xs-down">
-                        <a href="" class="top-nav__themes" data-sa-action="aside-open" data-sa-target=".themes"><i class="zmdi zmdi-palette"></i></a>
-                    </li>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>12 new members joined</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">add_shopping_cart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>4 sales made</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-red">
+                                                <i class="material-icons">delete_forever</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy Doe</b> deleted account</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">mode_edit</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy</b> changed name</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> commented your post</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">cached</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> updated status</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">settings</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>Settings updated</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    <!-- <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">flag</i>
+                            <span class="label-count">9</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">TASKS</li>
+                            <li class="body">
+                                <ul class="menu tasks">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Footer display issue
+                                                <small>32%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Make new buttons
+                                                <small>45%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Create new dashboard
+                                                <small>54%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Solve transition issue
+                                                <small>65%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <h4>
+                                                Answer GitHub questions
+                                                <small>92%</small>
+                                            </h4>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Tasks</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <!-- #END# Tasks -->
+                    <!-- <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li> -->
                 </ul>
-
-                <div class="clock hidden-md-down">
-                    <div class="time">
-                        <span class="time__hours"></span>
-                        <span class="time__min"></span>
-                        <span class="time__sec"></span>
-                    </div>
-                </div>
-            </header>
-
-            <div class="themes">
-                <div class="scrollbar-inner">
-                    <a href="" class="themes__item active" data-sa-value="1"><img src="<?php echo base_url(); ?>assets/admin/image/bg/1.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="2"><img src="<?php echo base_url(); ?>assets/admin/image/bg/2.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="3"><img src="<?php echo base_url(); ?>assets/admin/image/bg/3.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="4"><img src="<?php echo base_url(); ?>assets/admin/image/bg/4.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="5"><img src="<?php echo base_url(); ?>assets/admin/image/bg/5.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="6"><img src="<?php echo base_url(); ?>assets/admin/image/bg/6.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="7"><img src="<?php echo base_url(); ?>assets/admin/image/bg/7.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="8"><img src="<?php echo base_url(); ?>assets/admin/image/bg/8.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="9"><img src="<?php echo base_url(); ?>assets/admin/image/bg/9.jpg" alt=""></a>
-                    <a href="" class="themes__item" data-sa-value="10"><img src="<?php echo base_url(); ?>assets/admin/image/bg/10.jpg" alt=""></a>
-                </div>
             </div>
-
-            <div class="page-loader">
-                <div class="page-loader__spinner">
-                    <svg viewBox="25 25 50 50">
-                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                    </svg>
-                </div>
-            </div>
+        </div>
+    </nav>
