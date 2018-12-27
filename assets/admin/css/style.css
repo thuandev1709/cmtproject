@@ -4617,8 +4617,10 @@ section.content {
 .table-bordered {
   border-top: 1px solid #eee; }
   .table-bordered tbody tr td, .table-bordered tbody tr th {
-    padding: 10px;
-    border: 1px solid #eee; }
+    /*padding: 10px;*/
+    padding: 6px;
+    border: 1px solid #eee;
+    vertical-align: middle; }
   .table-bordered thead tr th {
     padding: 10px;
     border: 1px solid #eee; }
@@ -5092,13 +5094,15 @@ section.content {
   margin-bottom: 25px; }
   .form-group .form-control {
     width: 100%;
-    border: none;
+    /*border: none;*/
     box-shadow: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    padding-left: 0; }
+    /*padding-left: 0;*/
+    padding-left: 10px;
+  }
   .form-group .help-info {
     float: right;
     font-size: 12px;
@@ -6692,7 +6696,8 @@ fieldset[disabled] .form-control {
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  /*box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);*/
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
   border: none;
   position: fixed;
   top: 0;
@@ -8213,3 +8218,18 @@ html.ie11 .dropdown-menu ul.menu li a {
 
 html.ie11 .bs-searchbox .form-control {
   width: 90%; }
+
+
+/*---------------------------------------------------------------------------*/
+.margin-top-0 {
+  margin-top: 0px !important;
+}
+.margin-bottom-0 {
+  margin-bottom: 0px !important;
+}
+.padding-top-0 {
+  padding-top: 0px !important;
+}
+.padding-bottom-0 {
+  padding-bottom: 0px !important;
+}

@@ -44,7 +44,9 @@
     color: #F44336 !important; }
 
 .theme-pink .navbar {
-  background-color: #E91E63; }
+  /*background-color: #E91E63;*/
+  background-image: linear-gradient(#fb0055, #e91e63bf, #e91e634d);
+   }
 
 .theme-pink .navbar-brand {
   color: #fff; }
