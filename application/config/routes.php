@@ -54,4 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //Admin
-$route['admin'] = 'admin/Home';
+$route['admin/signin'] = 'admin/Account/signin';
+$route['admin/signout'] = 'admin/Account/signout';
+$route['admin'] = 'admin/Home/index';
+
+$route['admin/category'] = 'admin/Category/index';
+$route['admin/category/add'] = 'admin/Category/add';
+$route['admin/category/edit/(:num)'] = 'admin/Category/edit/$1';
