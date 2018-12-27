@@ -8,25 +8,28 @@ class MY_Controller extends CI_Controller {
 		$this->is_logged_in();
 	}
 
-	public function index()
-	{
-		
+	public function header() {
+	    $this->_user['cmt01_firstname'] = $this->session->userdata('cmt01_firstname');
+        $this->_user['cmt01_lastname']  = $this->session->userdata('cmt01_lastname');
+        $this->_user['cmt01_email']     = $this->session->userdata('cmt01_email');
+
+	    $this->load->view('admin/header', $this->_user);
 	}
 
-	public function header() {
-	    $user['fullname'] = $this->session->userdata('fullname');
-	    $this->load->view('admin/header.php', $user);
-	}
+    public function footer()
+    {
+        $this->load->view('admin/footer');
+    }
 
 	public function is_logged_in(){
-    $user = $this->session->userdata('id_admin');
-    if(isset($user)) {
+        $user = $this->session->userdata('cmt01_id_admin');
+        if(isset($user)) {
 
+        }
+        else {
+            redirect(base_url().'admin/signin');
+        }
     }
-    else {
-      redirect(base_url().'admin/account/login');
-    }
-  }
 
   	public function getFont($familyRaw, $subtypeRaw = "normal")
     {
